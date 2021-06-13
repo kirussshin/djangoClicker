@@ -1,6 +1,13 @@
 from rest_framework import serializers
-from notes.models import Note
-class NoteSerializer(serializers.ModelSerializer):
+from .models import MainCycle, Boost
+
+
+class MainCycleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Note
+        model = MainCycle
         fields = '__all__'
+
+class BoostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Boost
+        fields = ['id', 'power', 'price', 'level', 'boost_type'] 
